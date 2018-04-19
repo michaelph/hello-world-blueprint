@@ -94,6 +94,11 @@ inputs:
       API Version for Network
     default: "2015-06-15"
 
+  agent_install_method:
+    description: >
+      Prefered way to install agent, if does not work try remote
+    default: init_script
+
 dsl_definitions:
 
   azure_config: &azure_config
@@ -143,7 +148,7 @@ node_templates:
       agent_config:
         network: { get_input: manager_network }
         user: { get_input: agent_user }
-        install_method: init_script
+        install_method: { get_input: agent_install_method }
         port: 22
         key: { get_input: agent_key_private }
     relationships:
