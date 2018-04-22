@@ -151,6 +151,7 @@ node_templates:
         install_method: { get_input: agent_install_method }
         port: 22
         key: { get_input: agent_key_private }
+      storage_endpoint: { get_input: endpoint_storage }
     relationships:
     - type: cloudify.azure.relationships.contained_in_resource_group
       target: resource_group
