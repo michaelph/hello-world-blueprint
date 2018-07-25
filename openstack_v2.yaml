@@ -46,6 +46,9 @@ inputs:
 
   use_existing_network_deployment:
     default: false
+  
+  external_network_name:
+    default: ext-net
 
 dsl_definitions:
 
