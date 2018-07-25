@@ -30,18 +30,18 @@ inputs:
     description: >
       An Openstack Image ID. Tested with a Ubuntu 14.04 image.
     type: string
-    default: { get_secret: ubuntu_trusty_image }
+    default: { get_secret: ubuntu_xenial_image }
 
   flavor:
     description: >
       An Openstack Flavor ID.
-    default: '2'
+    default: '1'
 
   manager_network:
     default: external
 
   network_deployment_name:
-    default: openstack-example-network
+    default: cmopenstack
 
   use_existing_network_deployment:
     default: true
@@ -49,11 +49,14 @@ inputs:
 dsl_definitions:
 
   openstack_config: &openstack_config
-    username: { get_secret: keystone_username }
-    password: { get_secret: keystone_password }
-    tenant_name: { get_secret: keystone_tenant_name }
-    auth_url: { get_secret: keystone_url }
-    region: { get_secret: keystone_region }
+    username: { get_input: username }
+    password: { get_input: password }
+    #tenant_name: { get_input: tenant_name }
+    project_name: { get_input: project_name }
+    auth_url: { get_input: auth_url }
+    #region: { get_input: region }
+    user_domain_name: { get_input: user_domain_name}
+    project_id: { get_input: project_id}
 
 node_templates:
 
