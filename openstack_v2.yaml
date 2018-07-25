@@ -184,7 +184,7 @@ node_templates:
       resource_config:
         blueprint:
           id: { get_input: network_deployment_name }
-          blueprint_archive: https://github.com/NiltonDuarte/openstack-example-network/archive/master.zip
+          blueprint_archive: https://github.com/michaelph/openstack-example-network/archive/master.zip
           main_file_name: simple-blueprint.yaml
           external_resource: { get_input: use_existing_network_deployment }
         deployment:
