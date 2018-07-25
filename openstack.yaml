@@ -41,7 +41,7 @@ inputs:
     default: external
 
   network_deployment_name:
-    default: cmopenstack
+    default: openstack-examples-network_v3.0
 
   use_existing_network_deployment:
     default: true
